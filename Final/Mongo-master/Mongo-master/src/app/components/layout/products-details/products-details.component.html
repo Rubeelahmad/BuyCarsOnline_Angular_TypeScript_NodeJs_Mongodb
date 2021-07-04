@@ -1,0 +1,230 @@
+<!-- Start Inner Banner -->
+<div class="inner-banner inner-bg6">
+    <div class="container">
+        <div class="inner-title text-center">
+            <h3>Shop Details</h3>
+            <ul>
+                <li><a routerLink="/">Home</a></li>
+                <li><i class="bx bxs-chevron-right"></i></li>
+                <li>Shop Details</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Inner Banner End -->
+
+<!-- Product Details Area -->
+<div class="product-details-area pt-100 pb-70">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-12">
+                <div class="product-detls-image">
+                    <img [src]="product.imgRef" alt="{{ product.name }}" />
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-12">
+                <div class="product-desc">
+                    <h3>{{ product.name }}</h3>
+
+                    <div class="price">
+                        <span class="new-price">${{ product.afterPrice }}</span>
+                        <span class="old-price">${{ product.beforePrice }}</span>
+                    </div>
+
+                    <div class="product-review">
+                        <div class="rating">
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star-half"></i>
+                        </div>
+                        <a routerLink="/" class="rating-count">3 reviews</a>
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et. Lorem ipsum
+                        dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.
+                    </p>
+
+                    <div class="input-count-area">
+                        <h3>Quantity</h3>
+
+                        <div class="input-counter">
+                            <span class="minus-btn">
+                                <i class="bx bx-minus" (click)="subtractUnit()"></i>
+                            </span>
+                            <input
+                                type="text"
+                                [ngModelOptions]="{ standalone: true }"
+                                [(ngModel)]="product.quantity"
+                                value="{{ product.quantity }}"
+                                min="1"
+                            />
+
+                            <span class="plus-btn">
+                                <i class="bx bx-plus" (click)="addUnit()"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="product-add-btn">
+                        <button type="submit" class="default-btn default-bg-buttercup" (click)="addToCart()">
+                            <i class="fas fa-cart-plus"></i> Add To Cart
+                        </button>
+                    </div>
+
+                    <div class="product-share">
+                        <ul>
+                            <li>
+                                <span>Share:</span>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank"><i class="bx bxl-facebook"></i></a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank"><i class="bx bxl-linkedin"></i></a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank"><i class="bx bxl-twitter"></i></a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank"><i class="bx bxl-instagram"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Product Details Area End -->
+
+<!-- Start Product Tab -->
+<div class="product-tab pt-100 pb-70">
+    <div class="container">
+        <div class="tab products-details-tab">
+            <ul class="tabs">
+                <li>
+                    <a href="#">Description</a>
+                </li>
+                <li>
+                    <a href="#">Reviews<span>(4)</span> </a>
+                </li>
+            </ul>
+
+            <div class="tab_content current active pt-45">
+                <div class="tabs_item current">
+                    <div class="products-tabs-decs">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eu neque ut ipsum tempor varius. Orci varius
+                            natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam eget ligula eget sem lacinia
+                            varius. Maecenas maximus vitae ligula sit amet placerat. Suspendisse elementum porttitor erat tempus malesuada.
+                            Vestibulum lorem ipsum, congue sed risus cursus, condimentum luctus nibh. Ut convallis ultrices lorem. Donec
+                            blandit purus ac lacus finibus, nec feugiat elit auctor.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="tabs_item">
+                    <div class="products-tabs-reviews">
+                        <ul>
+                            <li>
+                                <img src="assets/img/products/product-profile1.png" alt="Image" />
+                                <h3>Devit M. kolin</h3>
+                                <div class="content">
+                                    <div class="rating">
+                                        <i class="bx bxs-star"></i>
+                                        <i class="bx bxs-star"></i>
+                                        <i class="bx bxs-star"></i>
+                                        <i class="bx bxs-star"></i>
+                                        <i class="bx bxs-star-half"></i>
+                                    </div>
+                                    <span>19 Jan 2020</span>
+                                </div>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                                </p>
+                            </li>
+
+                            <li>
+                                <img src="assets/img/products/product-profile2.png" alt="Image" />
+                                <h3>Donam. Markin</h3>
+                                <div class="content">
+                                    <div class="rating">
+                                        <i class="bx bxs-star"></i>
+                                        <i class="bx bxs-star"></i>
+                                        <i class="bx bxs-star"></i>
+                                        <i class="bx bxs-star"></i>
+                                        <i class="bx bxs-star-half"></i>
+                                    </div>
+                                    <span>14 April 2020</span>
+                                </div>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                                </p>
+                            </li>
+                        </ul>
+
+                        <div class="reviews-form">
+                            <div class="contact-form">
+                                <h3>Add Your Review</h3>
+                                <p>Lorem ipsum dolo sit amet, consectetur adipisicing eiusmod tempor incididun.</p>
+
+                                <div class="rating">
+                                    <i class="bx bxs-star"></i>
+                                    <i class="bx bxs-star"></i>
+                                    <i class="bx bxs-star"></i>
+                                    <i class="bx bxs-star"></i>
+                                    <i class="bx bxs-star-half"></i>
+                                </div>
+
+                                <form id="contactForm">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-sm-6">
+                                            <div class="form-group">
+                                                <input type="text" name="name" id="name" class="form-control" placeholder="Your Name*" />
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6 col-sm-6">
+                                            <div class="form-group">
+                                                <input
+                                                    type="email"
+                                                    name="email_address"
+                                                    id="email_address"
+                                                    class="form-control"
+                                                    placeholder="Email Address*"
+                                                />
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-12 col-md-12">
+                                            <div class="form-group">
+                                                <textarea
+                                                    name="message"
+                                                    class="form-control"
+                                                    id="message"
+                                                    cols="30"
+                                                    rows="8"
+                                                    placeholder="Your Message"
+                                                ></textarea>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-12 col-md-12">
+                                            <button type="submit" class="default-btn">Send Your Message</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Product Tab End -->

@@ -1,0 +1,532 @@
+<!-- Start Inner Banner -->
+<div class="inner-banner inner-bg9">
+    <div class="container">
+        <div class="inner-title text-center">
+            <h3>Shop</h3>
+            <ul>
+                <li><a routerLink="#">Home</a></li>
+                <li><i class="bx bxs-chevron-right"></i></li>
+                <li>Shop</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Inner Banner End -->
+
+<!-- Start Products Area End -->
+<div class="product-area pt-100 pb-70">
+    <div class="container">
+        <div class="section-title text-center">
+            <span class="span-bg">Shop</span>
+            <h2>Our All Product</h2>
+        </div>
+        <div class="sidebar-header">
+            <h3>Categories</h3>
+        </div>
+
+        <div class="wrapper">
+            <!-- Sidebar -->
+            <nav id="sidebar">
+                <ul class="list-unstyled components">
+                    <li class="active">
+                        <a href="javascript:void(0)" (click)="displayImages(1)">Car Spare Parts</a>
+                        <span class="ml-1 mr-1"> {{ carParts.length }}</span>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0)" (click)="displayImages(2)">Car Accessories</a>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0)" (click)="displayImages(3)">Car Emergency Accessories</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="row pt-45" *ngIf="isDisplayCarSpareParts">
+            <div class="col-lg-4 col-sm-6" *ngFor="let product of carParts">
+                <div class="single-product">
+                    <div class="product-header">
+                        <a class="img-wrapper" routerLink="/products-details">
+                            <img src="{{ product.imgRef }}" alt="Images" />
+                        </a>
+                    </div>
+                    <div class="product-content">
+                        <ul class="rating">
+                            <li>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star-half"></i>
+                            </li>
+                        </ul>
+
+                        <ul>
+                            <li>
+                                <del>${{ product.beforePrice }}</del>
+                            </li>
+                            <li>${{ product.afterPrice }}</li>
+                        </ul>
+                        <h3>
+                            <a (click)="navigateToProductDetails(product)">{{ product.name }}</a>
+                        </h3>
+                        <a (click)="navigateToCart(product)" class="default-btn product-btn"><i class="bx bx-cart"></i> Add To Cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row pt-45" *ngIf="isDisplayCarAccessories" style="background-color: red">
+            <div class="col-lg-4 col-sm-6">
+                <div class="single-product">
+                    <a routerLink="/products-details">
+                        <img src="assets/img/products/products-img1.jpg" alt="Images" />
+                    </a>
+                    <div class="product-content">
+                        <ul class="rating">
+                            <li>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star-half"></i>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li><del>$35.00</del></li>
+                            <li>$30.00</li>
+                        </ul>
+                        <h3><a routerLink="/products-details">Steering Wheel Cover</a></h3>
+                        <a routerLink="/cart" class="default-btn product-btn"><i class="bx bx-cart"></i> Add To Cart</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-sm-6">
+                <div class="single-product">
+                    <a routerLink="/products-details">
+                        <img src="assets/img/products/products-img2.jpg" alt="Images" />
+                    </a>
+                    <div class="product-content">
+                        <ul class="rating">
+                            <li>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star-half"></i>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li><del>$35.00</del></li>
+                            <li>$29.00</li>
+                        </ul>
+                        <h3><a routerLink="/products-details">200cm LED Car Interior</a></h3>
+                        <a routerLink="/cart" class="default-btn product-btn"><i class="bx bx-cart"></i> Add To Cart</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-sm-6">
+                <div class="single-product">
+                    <a routerLink="/products-details">
+                        <img src="assets/img/products/products-img3.jpg" alt="Images" />
+                    </a>
+                    <div class="product-content">
+                        <ul class="rating">
+                            <li>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star-half"></i>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>$25.00</li>
+                        </ul>
+                        <h3><a routerLink="/products-details">Carbon Fiber Style Multimedia Panel</a></h3>
+                        <a routerLink="/cart" class="default-btn product-btn"><i class="bx bx-cart"></i> Add To Cart</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-sm-6">
+                <div class="single-product">
+                    <a routerLink="/products-details">
+                        <img src="assets/img/products/products-img4.jpg" alt="Images" />
+                    </a>
+                    <div class="product-content">
+                        <ul class="rating">
+                            <li>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star-half"></i>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>$854.05</li>
+                        </ul>
+                        <h3><a routerLink="/products-details">Wheel - BMW (36-10-8-043-670)</a></h3>
+                        <a routerLink="/cart" class="default-btn product-btn"><i class="bx bx-cart"></i> Add To Cart</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-sm-6">
+                <div class="single-product">
+                    <a routerLink="/products-details">
+                        <img src="assets/img/products/products-img5.jpg" alt="Images" />
+                    </a>
+                    <div class="product-content">
+                        <ul class="rating">
+                            <li>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star-half"></i>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li><del>$55.00</del></li>
+                            <li>$50.00</li>
+                        </ul>
+                        <h3><a routerLink="/products-details">BMW 650i 2016 F10 F12 F13 4.4 TWIN TURBO V8 ENGINE</a></h3>
+                        <a routerLink="/cart" class="default-btn product-btn"><i class="bx bx-cart"></i> Add To Cart</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-sm-6">
+                <div class="single-product">
+                    <a routerLink="/products-details">
+                        <img src="assets/img/products/products-img6.jpg" alt="Images" />
+                    </a>
+                    <div class="product-content">
+                        <ul class="rating">
+                            <li>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star-half"></i>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li><del>$200.0</del></li>
+                            <li>$192.80</li>
+                        </ul>
+                        <h3><a routerLink="/products-details">Original BMW AGM-battery 60 AH</a></h3>
+                        <a routerLink="/cart" class="default-btn product-btn"><i class="bx bx-cart"></i> Add To Cart</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-sm-6">
+                <div class="single-product">
+                    <a routerLink="/products-details">
+                        <img src="assets/img/products/products-img7.jpg" alt="Images" />
+                    </a>
+                    <div class="product-content">
+                        <ul class="rating">
+                            <li>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star-half"></i>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li><del>$65.00</del></li>
+                            <li>$60.00</li>
+                        </ul>
+                        <h3><a routerLink="/products-details">Car Interior GPS Phone Holder</a></h3>
+                        <a routerLink="/cart" class="default-btn product-btn"><i class="bx bx-cart"></i> Add To Cart</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-sm-6">
+                <div class="single-product">
+                    <a routerLink="/products-details">
+                        <img src="assets/img/products/products-img8.jpg" alt="Images" />
+                    </a>
+                    <div class="product-content">
+                        <ul class="rating">
+                            <li>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star-half"></i>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li><del>$5.00</del></li>
+                            <li>$3.00</li>
+                        </ul>
+                        <h3><a routerLink="/products-details">4x Chrome Crown Car Tire Air Valve Stem Screw Caps</a></h3>
+                        <a routerLink="/cart" class="default-btn product-btn"><i class="bx bx-cart"></i> Add To Cart</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-sm-6 offset-lg-0 offset-sm-3">
+                <div class="single-product">
+                    <a routerLink="/products-details">
+                        <img src="assets/img/products/products-img9.jpg" alt="Images" />
+                    </a>
+                    <div class="product-content">
+                        <ul class="rating">
+                            <li>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star-half"></i>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li><del>$7.00</del></li>
+                            <li>$3.00</li>
+                        </ul>
+                        <h3><a routerLink="/products-details">Drink Cup Holder</a></h3>
+                        <a routerLink="/cart" class="default-btn product-btn"><i class="bx bx-cart"></i> Add To Cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row pt-45" *ngIf="isDisplayCarEmergencyAccessories" style="background-color: green">
+            <div class="col-lg-4 col-sm-6">
+                <div class="single-product">
+                    <a routerLink="/products-details">
+                        <img src="assets/img/products/products-img1.jpg" alt="Images" />
+                    </a>
+                    <div class="product-content">
+                        <ul class="rating">
+                            <li>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star-half"></i>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li><del>$35.00</del></li>
+                            <li>$30.00</li>
+                        </ul>
+                        <h3><a routerLink="/products-details">Steering Wheel Cover</a></h3>
+                        <a routerLink="/cart" class="default-btn product-btn"><i class="bx bx-cart"></i> Add To Cart</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-sm-6">
+                <div class="single-product">
+                    <a routerLink="/products-details">
+                        <img src="assets/img/products/products-img2.jpg" alt="Images" />
+                    </a>
+                    <div class="product-content">
+                        <ul class="rating">
+                            <li>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star-half"></i>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li><del>$35.00</del></li>
+                            <li>$29.00</li>
+                        </ul>
+                        <h3><a routerLink="/products-details">200cm LED Car Interior</a></h3>
+                        <a routerLink="/cart" class="default-btn product-btn"><i class="bx bx-cart"></i> Add To Cart</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-sm-6">
+                <div class="single-product">
+                    <a routerLink="/products-details">
+                        <img src="assets/img/products/products-img3.jpg" alt="Images" />
+                    </a>
+                    <div class="product-content">
+                        <ul class="rating">
+                            <li>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star-half"></i>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>$25.00</li>
+                        </ul>
+                        <h3><a routerLink="/products-details">Carbon Fiber Style Multimedia Panel</a></h3>
+                        <a routerLink="/cart" class="default-btn product-btn"><i class="bx bx-cart"></i> Add To Cart</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-sm-6">
+                <div class="single-product">
+                    <a routerLink="/products-details">
+                        <img src="assets/img/products/products-img4.jpg" alt="Images" />
+                    </a>
+                    <div class="product-content">
+                        <ul class="rating">
+                            <li>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star-half"></i>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>$854.05</li>
+                        </ul>
+                        <h3><a routerLink="/products-details">Wheel - BMW (36-10-8-043-670)</a></h3>
+                        <a routerLink="/cart" class="default-btn product-btn"><i class="bx bx-cart"></i> Add To Cart</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-sm-6">
+                <div class="single-product">
+                    <a routerLink="/products-details">
+                        <img src="assets/img/products/products-img5.jpg" alt="Images" />
+                    </a>
+                    <div class="product-content">
+                        <ul class="rating">
+                            <li>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star-half"></i>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li><del>$55.00</del></li>
+                            <li>$50.00</li>
+                        </ul>
+                        <h3><a routerLink="/products-details">BMW 650i 2016 F10 F12 F13 4.4 TWIN TURBO V8 ENGINE</a></h3>
+                        <a routerLink="/cart" class="default-btn product-btn"><i class="bx bx-cart"></i> Add To Cart</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-sm-6">
+                <div class="single-product">
+                    <a routerLink="/products-details">
+                        <img src="assets/img/products/products-img6.jpg" alt="Images" />
+                    </a>
+                    <div class="product-content">
+                        <ul class="rating">
+                            <li>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star-half"></i>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li><del>$200.0</del></li>
+                            <li>$192.80</li>
+                        </ul>
+                        <h3><a routerLink="/products-details">Original BMW AGM-battery 60 AH</a></h3>
+                        <a routerLink="/cart" class="default-btn product-btn"><i class="bx bx-cart"></i> Add To Cart</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-sm-6">
+                <div class="single-product">
+                    <a routerLink="/products-details">
+                        <img src="assets/img/products/products-img7.jpg" alt="Images" />
+                    </a>
+                    <div class="product-content">
+                        <ul class="rating">
+                            <li>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star-half"></i>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li><del>$65.00</del></li>
+                            <li>$60.00</li>
+                        </ul>
+                        <h3><a routerLink="/products-details">Car Interior GPS Phone Holder</a></h3>
+                        <a routerLink="/cart" class="default-btn product-btn"><i class="bx bx-cart"></i> Add To Cart</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-sm-6">
+                <div class="single-product">
+                    <a routerLink="/products-details">
+                        <img src="assets/img/products/products-img8.jpg" alt="Images" />
+                    </a>
+                    <div class="product-content">
+                        <ul class="rating">
+                            <li>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star-half"></i>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li><del>$5.00</del></li>
+                            <li>$3.00</li>
+                        </ul>
+                        <h3><a routerLink="/products-details">4x Chrome Crown Car Tire Air Valve Stem Screw Caps</a></h3>
+                        <a routerLink="/cart" class="default-btn product-btn"><i class="bx bx-cart"></i> Add To Cart</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-sm-6 offset-lg-0 offset-sm-3">
+                <div class="single-product">
+                    <a routerLink="/products-details">
+                        <img src="assets/img/products/products-img9.jpg" alt="Images" />
+                    </a>
+                    <div class="product-content">
+                        <ul class="rating">
+                            <li>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star-half"></i>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li><del>$7.00</del></li>
+                            <li>$3.00</li>
+                        </ul>
+                        <h3><a routerLink="/products-details">Drink Cup Holder</a></h3>
+                        <a routerLink="/cart" class="default-btn product-btn"><i class="bx bx-cart"></i> Add To Cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Products Area End -->

@@ -1,0 +1,76 @@
+.container {
+    .wrapper {
+        position: absolute;
+        left: 0;
+        width: 15%;
+        margin: 10px 10px 10px 20px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        height: 175px;
+        background-color: #f8f7f7f7;
+
+        #sidebar {
+            height: 100%;
+            .list-unstyled.components {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                height: 100%;
+                margin: 0 !important;
+                li {
+                    line-height: 40px;
+                    display: inline-block;
+                    display: flex;
+                    align-items: center;
+                    height: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    a {
+                        display: inline-block;
+                        padding: 5px;
+                        color: #333;
+                        font-weight: bold;
+                    }
+
+                    a:hover {
+                        color: #337ab7;
+                        background-color: #e8f4f8;
+                    }
+
+                    span {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 15px;
+                        border-radius: 50%;
+                        color: #fff;
+                        background: #337ab7;
+                        width: 40px;
+                        height: 40px;
+                    }
+                }
+
+                li:not(:first-child):not(:last-child) {
+                    border-bottom: 1px solid #ccc;
+                    border-top: 1px solid #ccc;
+                }
+            }
+        }
+    }
+
+    .single-product {
+        .product-header {
+            height: 375px;
+            .img-wrapper {
+                height: 100%;
+                img {
+                    height: 100%;
+                }
+            }
+        }
+
+        .product-content {
+            height: 125px;
+        }
+    }
+}
